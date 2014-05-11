@@ -1,5 +1,5 @@
 (function(namespace){
-	if (Modernizr) {
+	if (Modernizr && Modernizr.load) {
 		Modernizr.load({
 			test: Modernizr.localstorage,
 			nope: 'polyfill/localStorage.js'
