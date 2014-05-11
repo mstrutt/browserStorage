@@ -1,28 +1,16 @@
 (function(namespace){
 	var browserStorage = function(){
-		var data = false,
-			init = function() {
-				data = JSON.parse(localStorage.getItem(namespace)) || {};
-			};
-
 		this.get = function (key) {
-			if (!data) init();
-			return data[key];
+			var val = localStorage[namespace+key];
+			return (val) ? JSON.parse(val) : undefined;
 		};
 
 		this.set = function (key, val) {
-			if (!data) init();
-			if (arguments.length === 2) {
-				data[key] = val;
-				localStorage.setItem(namespace, JSON.stringify(data));
-			}
-			return arguments.length === 2;
+			return (arguments.length === 2) ? localStorage[namespace+key] = JSON.stringify(val) : false;
 		};
 
 		this.clear = function (key) {
-			if (!data) init();
-			delete data[key];
-			localStorage.setItem(namespace, JSON.stringify(data));
+			return delete localStorage[namespace+key];
 		};
 	};
 
