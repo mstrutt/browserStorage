@@ -1,12 +1,42 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>browserStorage Demo</title>
+		<title>browserStorage.js demo</title>
+		<style>
+			body {
+				font-family: sans;
+				line-height: 1.6;
+				font-size: 16px;
+			}
+
+			label {
+				display: block;
+			}
+
+			input,
+			textarea {
+				box-sizing: border-box;
+				width: 100%;
+				padding: .5em;
+				margin-bottom: 1em;
+				line-height: inherit;
+				font-family: inherit;
+				font-size: inherit;
+			}
+		</style>
 		<script src="modernizr.js"></script>
 	</head>
 	<body>
-		<h1>browserStorage.js</h1>
+		<h1>browserStorage.js demo</h1>
+
+		<form id="sample-form" name="sample-form">
+			<label for="name">Name</label>
+			<input type="test" id="name" name="name" />
+			<label for="message">Message</label>
+			<textarea id="message" name="message" rows="5"></textarea>
+		</form>
 
 		<script src="browserStorage.js"></script>
+		<script src="test.js"></script>
 	</body>
 </html>
