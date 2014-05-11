@@ -45,10 +45,10 @@ function runTests () {
 		}, 200);
 	}
 
-	[].forEach.call(document.forms['sample-form'].elements, function(input){
-		input.onkeyup = persistForm;
+	[].forEach.call(document.forms['sample-form'].elements, function(element){
+		element.onkeyup = persistForm;
 
-		if (formData[input.name])
-			input.value = formData[input.name];
+		if (formData[element.name])
+			element.value = formData[element.name];
 	});
 })();
